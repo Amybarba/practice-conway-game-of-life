@@ -36,6 +36,8 @@ class Cellular extends React.Component {
 
   state = {
     cells: [],
+    interval: 100,
+    isRunning: false,
   };
 
   makeEmptyAutomaton() {
@@ -87,10 +89,92 @@ class Cellular extends React.Component {
 
     this.setState({ cells: this.makeCells() });
   };
+
+  runGame = () => {
+    this.setState({ isRunning: true });
+    this.runIteration();
+  };
+
+  stopGame = () => {
+    this.setState({ isRunning: false });
+    if (this.timeoutHandler) {
+      window.clearTimeout(this.timeoutHandler);
+      this.timeoutHandler = null;
+    }
+  }
+  runIteration() {
+    let newAutomaton = this.makeEmptyAutomaton();
+
+    for (let y = 0; y < this.rows; y++) {
+        for (let x = 0; x < this.cols; x++) {
+            let neighbors = this.calculateNeighbors(this.automaton, x, y);
+            if (this.automaton[y][x]) {
+                if (neighbors === 2 || neighbors === 3) {
+                    newAutomaton[y][x] = true;
+                } else {
+                    newAutomaton[y][x] = false;
+                }
+            } else {
+                if (!this.automaton[y][x] && neighbors === 3) {
+                    newAutomaton[y][x] = true;
+                }
+            }
+        }
+    }
+
+    this.automaton = newAutomaton;
+    this.setState({ cells: this.makeCells() });
+
+    this.timeoutHandler = window.setTimeout(() => {
+        this.runIteration();
+    }, this.state.interval);
+}
+
+/**
+     * Calculate the number of neighbors at point (x, y)
+     * @param {Array} automaton
+     * @param {int} x 
+     * @param {int} y 
+     */
+    calculateNeighbors(automaton, x, y) {
+      let neighbors = 0;
+      const dirs = [[-1, -1], [-1, 0], [-1, 1], [0, 1], [1, 1], [1, 0], [1, -1], [0, -1]];
+      for (let i = 0; i < dirs.length; i++) {
+          const dir = dirs[i];
+          let y1 = y + dir[0];
+          let x1 = x + dir[1];
+
+          if (x1 >= 0 && x1 < this.cols && y1 >= 0 && y1 < this.rows && automaton[y1][x1]) {
+              neighbors++;
+          }
+      }
+
+      return neighbors;
+  }
+
+  handleIntervalChange = (event) => {
+      this.setState({ interval: event.target.value });
+  }
+
+  handleClear = () => {
+      this.automaton = this.makeEmptyAutomaton();
+      this.setState({ cells: this.makeCells() });
+  }
+
+  handleRandom = () => {
+      for (let y = 0; y < this.rows; y++) {
+          for (let x = 0; x < this.cols; x++) {
+              this.automaton[y][x] = (Math.random() >= 0.5);
+          }
+      }
+
+      this.setState({ cells: this.makeCells() });
+  }
+
   // Specify the background size under classname twodspace//
   //Add onclick to allow removal of the cell and retrieve location//
   render() {
-    const { cells } = this.state;
+    const { cells, interval, isRunning } = this.state;
     return (
       <div>
         {" "}
@@ -103,12 +187,35 @@ class Cellular extends React.Component {
           }}
           onClick={this.handleClick}
           ref={(n) => {
-            this.automatonRef = n; }}>
-
-          {cells.map(cell => (  
-            <Cell x={cell.x} y={cell.y}
-            key={`${cell.x}, ${cell.y}`}/> 
+            this.automatonRef = n;
+          }}
+        >
+          {cells.map((cell) => (
+            <Cell x={cell.x} y={cell.y} key={`${cell.x}, ${cell.y}`} />
           ))}
+        </div>
+        <div className="controls">
+          Update every{" "}
+          <input
+            value={this.state.interval}
+            onChange={this.handleIntervalChange}
+          />{" "}
+          msec
+          {isRunning ? (
+            <button className="button" onClick={this.stopGame}>
+              Stop
+            </button>
+          ) : (
+            <button className="button" onClick={this.runGame}>
+              Run
+            </button>
+          )}
+          <button className="button" onClick={this.handleRandom}>
+            Random
+          </button>
+          <button className="button" onClick={this.handleClear}>
+            Clear
+          </button>
         </div>
       </div>
     );
