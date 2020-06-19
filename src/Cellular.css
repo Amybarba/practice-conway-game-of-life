@@ -1,7 +1,26 @@
 .Twodspace {
   position: relative;
   margin: 0 auto;
-  background-color: #000;
+  background-color: #ff1493;
+  background-image: linear-gradient(
+    319deg,
+    #ff1493 0%,
+    #0000ff 37%,
+    #ff8c00 100%
+  );
+  /* This creates the grid element */
   background-image: linear-gradient(#333 1px, transparent 1px),
     linear-gradient(90deg, #333 1px, transparent 1px);
+}
+
+.Title {
+  background-color: #1fd1f9;
+  background-image: linear-gradient(315deg, #1fd1f9 0%, #b621fe 74%);
+}
+
+.Cell {
+  background: #ccc;
+  background-color: #1fd1f9;
+  background-image: linear-gradient(315deg, #1fd1f9 0%, #b621fe 74%);
+  position: absolute;
 }

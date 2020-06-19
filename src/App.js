@@ -6,7 +6,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Conway's Brilliant Game Of Life!</h1>
+        <h1 className="Title">Conway's Brilliant Game Of Life!</h1>
         <Cellular />
       </div>
     );
