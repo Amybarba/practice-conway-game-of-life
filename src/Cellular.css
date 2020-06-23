@@ -21,7 +21,7 @@
 .Cell {
   background: #ccc;
   background-color: #5de6de;
-background-image: linear-gradient(315deg, #5de6de 0%, #b58ecc 74%);
+background-image: url("./rainbow_landscape.jpg");
   position: absolute;
 }
 
