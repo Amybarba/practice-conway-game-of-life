@@ -174,7 +174,7 @@ class Cellular extends React.Component {
   // Specify the background size under classname twodspace//
   //Add onclick to allow removal of the cell and retrieve location//
   render() {
-    const { cells, interval, isRunning } = this.state;
+    const { cells, isRunning } = this.state;
     return (
       <div>
         {" "}
