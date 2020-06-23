@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5ee6a9542cdb458e83bc68d29cda6558",
+    "revision": "47495b7efd9aa870eef9be7051fc7ad4",
     "url": "/practice-conway-game-of-life/index.html"
   },
   {
-    "revision": "49530847d4e906793a00",
+    "revision": "2047b84c91ac76b816c5",
     "url": "/practice-conway-game-of-life/static/css/main.baa12ca3.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/practice-conway-game-of-life/static/js/2.8efef863.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "49530847d4e906793a00",
-    "url": "/practice-conway-game-of-life/static/js/main.dffe20c6.chunk.js"
+    "revision": "2047b84c91ac76b816c5",
+    "url": "/practice-conway-game-of-life/static/js/main.21de8594.chunk.js"
   },
   {
     "revision": "b6b3d7c8612b43c0fa73",
