@@ -195,26 +195,26 @@ class Cellular extends React.Component {
           ))}
         </div>
         <div className="controls">
-          Update every{" "}
+          Life Cycle{" "}
           <input
             value={this.state.interval}
             onChange={this.handleIntervalChange}
           />{" "}
-          msec
+          MicroSeconds
           {isRunning ? (
             <button className="button" onClick={this.stopGame}>
-              Stop
+              STOP! 
             </button>
           ) : (
             <button className="button" onClick={this.runGame}>
-              Run
+              Let the Biology Begin
             </button>
           )}
           <button className="button" onClick={this.handleRandom}>
-            Random
+            Chaos
           </button>
           <button className="button" onClick={this.handleClear}>
-            Clear
+            Wipe the Automaton
           </button>
         </div>
       </div>

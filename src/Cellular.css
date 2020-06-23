@@ -1,7 +1,7 @@
 .Twodspace {
   position: relative;
   margin: 0 auto;
-  background-color: #ff1493;
+  background-color: #9966ff;
   background-image: linear-gradient(
     319deg,
     #ff1493 0%,
@@ -20,7 +20,19 @@
 
 .Cell {
   background: #ccc;
-  background-color: #1fd1f9;
-  background-image: linear-gradient(315deg, #1fd1f9 0%, #b621fe 74%);
+  background-color: #5de6de;
+background-image: linear-gradient(315deg, #5de6de 0%, #b58ecc 74%);
   position: absolute;
+}
+
+.controls {
+font-size: 20px;
+font-weight: bold;
+color: #00FFFF;
+}
+
+.button {
+  font-size: 20px;
+font-weight: bold;
+color: #CC66FF;
 }
