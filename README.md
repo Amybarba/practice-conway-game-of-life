@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+The most current version can be found here: 
+http://192.168.1.233:3000/practice-conway-game-of-life
+hosted by github pages.
+
 ## Available Scripts
 
 In the project directory, you can run:
