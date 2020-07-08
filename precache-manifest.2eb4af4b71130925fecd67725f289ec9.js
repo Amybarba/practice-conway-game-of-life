@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "47495b7efd9aa870eef9be7051fc7ad4",
+    "revision": "b469c5440e8fa4318c614ad89b077a28",
     "url": "/practice-conway-game-of-life/index.html"
   },
   {
-    "revision": "2047b84c91ac76b816c5",
-    "url": "/practice-conway-game-of-life/static/css/main.baa12ca3.chunk.css"
+    "revision": "d614f1f0795ae8ef518a",
+    "url": "/practice-conway-game-of-life/static/css/main.444c8036.chunk.css"
   },
   {
     "revision": "fe1bfd1044c100f1d385",
@@ -16,11 +16,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/practice-conway-game-of-life/static/js/2.8efef863.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "2047b84c91ac76b816c5",
+    "revision": "d614f1f0795ae8ef518a",
     "url": "/practice-conway-game-of-life/static/js/main.21de8594.chunk.js"
   },
   {
     "revision": "b6b3d7c8612b43c0fa73",
     "url": "/practice-conway-game-of-life/static/js/runtime-main.bb8c94af.js"
+  },
+  {
+    "revision": "5981adf7e29e76f99689cdaa804164a3",
+    "url": "/practice-conway-game-of-life/static/media/rainbow_landscape.5981adf7.jpg"
   }
 ]);
